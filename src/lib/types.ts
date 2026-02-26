@@ -32,7 +32,7 @@ export interface Message {
 }
 
 export interface Filters {
-  genres: Set<string>;
-  languages: Set<string>;
+  genres: string[];
+  languages: string[];
   langPref: string;
 }
