@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #080a0e;
+  --accent: #f0c84a;
+  --accent2: #e07845;
+  --text: #edeae3;
+  --sub: #8b909c;
+  --muted: #3e424e;
+  --border: rgba(255,255,255,0.07);
+  --border-hi: rgba(255,255,255,0.13);
+  --card: rgba(16,19,26,0.95);
+}
+
+html, body { height: 100%; overflow: hidden; background: #080a0e; color: #edeae3; }
+* { box-sizing: border-box; }
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.07); border-radius: 2px; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-rise { animation: rise 0.3s ease both; }
+
+@keyframes tdot {
+  0%,60%,100% { transform: scale(1); opacity: 0.5; }
+  30%         { transform: scale(1.5); opacity: 1; }
+}
+.typing-dot { width:5px; height:5px; border-radius:50%; background:#f0c84a; opacity:0.5; animation: tdot 1.1s ease infinite; }
+.typing-dot:nth-child(2) { animation-delay:.18s; }
+.typing-dot:nth-child(3) { animation-delay:.36s; }
+
+@keyframes voice-pulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(240,80,80,0.4); }
+  50%     { box-shadow: 0 0 0 7px rgba(240,80,80,0); }
+}
+.voice-listening { animation: voice-pulse 1s ease infinite !important; background: rgba(240,80,80,0.15) !important; border-color: rgba(240,80,80,0.5) !important; color: #f05050 !important; }
+
+@keyframes pulse-g { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.live-dot { animation: pulse-g 2.5s ease infinite; }
+
+@keyframes float-orb { from { transform: translate(0,0) scale(1); } to { transform: translate(28px,20px) scale(1.08); } }
+.orb  { animation: float-orb 20s ease-in-out infinite alternate; }
+.orb2 { animation-delay: -10s; }
+.orb3 { animation-delay: -5s; }
+
+.movie-card { transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
+.movie-card:hover { transform: translateY(-3px); border-color: rgba(240,200,74,0.3) !important; box-shadow: 0 12px 36px rgba(0,0,0,0.6); }
+.movie-card:hover .poster-img { transform: scale(1.05); }
+.poster-img { transition: transform 0.3s ease; }
+.input-ring:focus-within { border-color: rgba(240,200,74,0.3) !important; }
