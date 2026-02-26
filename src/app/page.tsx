@@ -10,8 +10,8 @@ import { Message, Filters, AIResponse } from "@/lib/types";
 
 function buildContext(filters: Filters): string {
   const parts: string[] = [];
-  if (filters.genres.size) parts.push(`Mood: ${[...filters.genres].join(", ")}`);
-  if (filters.languages.size) parts.push(`Language chips: ${[...filters.languages].join(", ")}`);
+  if (filters.genres.length) parts.push(`Mood: ${[filters.genres].join(", ")}`);
+  if (filters.languages.length) parts.push(`Language chips: ${[...filters.languages].join(", ")}`);
   if (filters.langPref) parts.push(`Language preference: ${filters.langPref}`);
   return parts.join(". ");
 }
